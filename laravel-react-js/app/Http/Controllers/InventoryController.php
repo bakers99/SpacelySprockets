@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 class InventoryController extends Controller
 {
@@ -13,7 +14,9 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::all();
+
+        return $items;
     }
 
     /**
@@ -23,7 +26,6 @@ class InventoryController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -34,7 +36,26 @@ class InventoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'itemCategory'=>'required',
+            'itemID'=>'required',
+            'itemName'=>'required',
+            'itemDesc'=>'required',
+            'itemCount'=>'required',
+            'itemCost'=>'required'
+        ]);
+
+        try{
+            Item::create($request->post());
+            return response()->json([
+                'message'=>'Product Created Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while creating a product!!'
+            ],500);
+        }
     }
 
     /**
@@ -45,7 +66,9 @@ class InventoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Item::find($id);
+
+        return $item;
     }
 
     /**

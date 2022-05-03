@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InventoryController;
 
 
 /*
@@ -17,6 +18,6 @@ Route::get('{reactRoutes}', function () {
     return view('welcome'); // your start view
 })->where('reactRoutes', '^((?!api).)*$'); // except 'api' word
 
-Route::resource('/api/inventory', \App\Http\Controllers\InventoryController::class);
 Route::resource('/api/sales', \App\Http\Controllers\SalesController::class);
 Route::resource('/api/customers', \App\Http\Controllers\CustomersController::class);
+Route::resource('api/inventory', \App\Http\Controllers\InventoryController::class);
