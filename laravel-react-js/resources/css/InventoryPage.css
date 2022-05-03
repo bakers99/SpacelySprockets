@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap');
+
+.container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+}
+form select {
+    margin-left: .5rem;
+}
+h1 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+table {
+    margin-top: 2rem;
+}
+table th {
+    font-family: 'Roboto', sans-serif;
+}
+
+#new-button {
+    margin-top: 1rem;
+}
+
+/* Create Page */
+
+table {
+    font-family: 'Open Sans', sans-serif;
+}
+form select {
+    margin-left: 0;
+}
+#button-container {
+    text-align: center;
+}

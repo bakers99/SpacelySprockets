@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('{reactRoutes}', function () {
+    return view('welcome'); // your start view
+})->where('reactRoutes', '^((?!api).)*$'); // except 'api' word
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('api/whatever/1', function() {
+    return [
+        'one' => 'two',
+        'first' => 'second'
+    ];
 });
