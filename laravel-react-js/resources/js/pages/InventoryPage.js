@@ -1,15 +1,17 @@
 import {useState} from "react";
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import useFetch from "../useFetch";
 import NavigationBar from '../components/NavigationBar'
-// import Item from './Item'
 import '../../css/InventoryPage.css';
+import {Link} from "react-router-dom";
 
 
 
 const Inventory = () => {
     const {data, isPending, error} = useFetch('http://127.0.0.1:8000/api/inventory/')
     const[category, setCategory] = useState("Sprocket")
+
+    console.log(data);
 
     function getCategory(event) {
         setCategory(event.target.value);
@@ -47,7 +49,7 @@ const Inventory = () => {
                 </table>
 
                 <Link to={`/create`}>
-                <button type="button" className="btn btn-info" id="new-button">Insert New Item</button>
+                    <button type="button" className="btn btn-info" id="new-button">Insert New Item</button>
                 </Link>
             </div>
         </>
@@ -64,8 +66,6 @@ const Item = (props) => {
     const {choice, inventory} = props;
 
     const DisplayChoice = inventory.map(item => {
-        console.log("ITEM: "+ item)
-
         if(item.itemCategory === choice) {
             return (
                 <tr key={item.itemID}>
@@ -73,9 +73,9 @@ const Item = (props) => {
                     <td>{item.itemName}</td>
                     <td>{item.itemCount}</td>
                     <td>
-                        {/*<Link to={`/inventory/${item.id}`}>*/}
-                        {/*    <button key={item.id} type="button" className="btn btn-dark">More Info</button>*/}
-                        {/*</Link>*/}
+                        <Link to={`/inventory/${item.itemID}`}>
+                            <button key={item.itemID} type="button" className="btn btn-dark">More Info</button>
+                        </Link>
                     </td>
                 </tr>
             )

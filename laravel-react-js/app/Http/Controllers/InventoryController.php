@@ -14,9 +14,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
-
-        return $items;
+        return Item::all();
     }
 
     /**
@@ -76,9 +74,7 @@ class InventoryController extends Controller
      */
     public function show($id)
     {
-        $item = Item::find($id);
-
-        return $item;
+        return Item::find($id);
     }
 
     /**
