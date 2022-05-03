@@ -5766,8 +5766,6 @@ var Inventory = function Inventory() {
       category = _useState2[0],
       setCategory = _useState2[1];
 
-  console.log(data);
-
   function getCategory(event) {
     setCategory(event.target.value);
   }
@@ -6057,6 +6055,7 @@ var ItemCreate = function ItemCreate() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
             children: ["Item Amount:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
               type: "number",
+              min: "1",
               name: "amount",
               onChange: function onChange(event) {
                 setAmount(event.target.value);
@@ -6065,6 +6064,8 @@ var ItemCreate = function ItemCreate() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
             children: ["Item Cost:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
               type: "number",
+              min: "1",
+              step: "0.01",
               name: "cost",
               onChange: function onChange(event) {
                 setCost(event.target.value);

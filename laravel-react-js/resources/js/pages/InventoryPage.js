@@ -11,8 +11,6 @@ const Inventory = () => {
     const {data, isPending, error} = useFetch('http://127.0.0.1:8000/api/inventory/')
     const[category, setCategory] = useState("Sprocket")
 
-    console.log(data);
-
     function getCategory(event) {
         setCategory(event.target.value);
     }

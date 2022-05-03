@@ -89,11 +89,11 @@ const ItemCreate = () => {
                 </label>
                 <label>
                 Item Amount:
-                <input type="number" name="amount" onChange={(event)=>{setAmount(event.target.value)}}/>
+                <input type="number" min='1' name="amount" onChange={(event)=>{setAmount(event.target.value)}}/>
                 </label>
                 <label>
                 Item Cost:
-                <input type="number" name="cost" onChange={(event)=>{setCost(event.target.value)}}/>
+                <input type="number" min='1' step="0.01" name="cost" onChange={(event)=>{setCost(event.target.value)}}/>
                 </label>
                 <input type="submit" value="Submit" />
                 </form>

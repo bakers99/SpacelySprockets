@@ -45,8 +45,18 @@ class InventoryController extends Controller
             'itemCost'=>'required'
         ]);
 
+        $itemID = $request->input('itemID');
+
         try{
-            Item::create($request->post());
+            $item = new Item;
+            $item->itemID = $request->itemID;
+            $item->itemCategory = $request->itemCategory;
+            $item->itemName = $request->itemName;
+            $item->itemDesc = $request->itemDesc;
+            $item->itemCount = $request->itemCount;
+            $item->itemCost = $request->itemCost;
+            $item->save();
+
             return response()->json([
                 'message'=>'Product Created Successfully!!'
             ]);
