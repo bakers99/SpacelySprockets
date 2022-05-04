@@ -6079,10 +6079,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/NavigationBar */ "./resources/js/components/NavigationBar.js");
-/* harmony import */ var _css_InventoryPage_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/InventoryPage.css */ "./resources/css/InventoryPage.css");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NavigationBar */ "./resources/js/components/NavigationBar.js");
+/* harmony import */ var _css_InventoryPage_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/InventoryPage.css */ "./resources/css/InventoryPage.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -6110,40 +6110,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var ItemCreate = function ItemCreate() {
+var Create = function Create() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)("Cog"),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Sprocket"),
       _useState2 = _slicedToArray(_useState, 2),
       category = _useState2[0],
       setCategory = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(""),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
       _useState4 = _slicedToArray(_useState3, 2),
       id = _useState4[0],
       setID = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(""),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Regular Sprocket"),
       _useState6 = _slicedToArray(_useState5, 2),
-      name = _useState6[0],
-      setName = _useState6[1];
+      item = _useState6[0],
+      setItem = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(""),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Description stuff..."),
       _useState8 = _slicedToArray(_useState7, 2),
-      desc = _useState8[0],
-      setDesc = _useState8[1];
+      description = _useState8[0],
+      setDescription = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(""),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
       _useState10 = _slicedToArray(_useState9, 2),
-      amount = _useState10[0],
-      setAmount = _useState10[1];
+      count = _useState10[0],
+      setCount = _useState10[1];
 
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(""),
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(9.99),
       _useState12 = _slicedToArray(_useState11, 2),
       cost = _useState12[0],
       setCost = _useState12[1];
 
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)({}),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
       _useState14 = _slicedToArray(_useState13, 2),
       validationError = _useState14[0],
       setValidationError = _useState14[1];
@@ -6157,16 +6157,16 @@ var ItemCreate = function ItemCreate() {
             case 0:
               e.preventDefault();
               formData = new FormData();
-              formData.append('itemName', name);
-              formData.append('itemDesc', desc);
+              formData.append('itemName', item);
+              formData.append('itemDesc', description);
               formData.append('itemID', id);
               formData.append('itemCategory', category);
-              formData.append('itemCount', amount);
+              formData.append('itemCount', count);
               formData.append('itemCost', cost);
               _context.next = 10;
               return axios.post("http://127.0.0.1:8000/api/inventory", formData).then(function (_ref2) {
                 var data = _ref2.data;
-                alert("Item Sucessfully Created");
+                alert("Item successfully Created");
                 navigate("/inventory");
               })["catch"](function (_ref3) {
                 var response = _ref3.response;
@@ -6192,107 +6192,129 @@ var ItemCreate = function ItemCreate() {
   }();
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-          children: "Create New Item"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "form-wrapper",
-        children: Object.keys(validationError).length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "row",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "col-12",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-              className: "alert alert-danger",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
-                className: "mb-0",
-                children: Object.entries(validationError).map(function (_ref4) {
-                  var _ref5 = _slicedToArray(_ref4, 2),
-                      key = _ref5[0],
-                      value = _ref5[1];
-
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
-                    children: value
-                  }, key);
-                })
-              })
-            })
-          })
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "form",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-          onSubmit: createItem,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item Category:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
-              name: "category",
-              onChange: function onChange(event) {
-                setCategory(event.target.value);
-              },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-                value: "Cog",
-                children: "Cog"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-                value: "Sprocket",
-                children: "Sprocket"
-              })]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+        children: " Create Inventory Item"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+        onSubmit: createItem,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "category",
+            className: "form-label",
+            children: "Category"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+            className: "form-select",
+            name: "category",
+            required: true,
+            value: category,
+            onChange: function onChange(e) {
+              return setCategory(e.target.value);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: "Sprocket",
+              children: "Sprocket"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: "Cog",
+              children: "Cog"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item ID:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              type: "text",
-              name: "id",
-              onChange: function onChange(event) {
-                setID(event.target.value);
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item Name:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              type: "text",
-              name: "name",
-              onChange: function onChange(event) {
-                setName(event.target.value);
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item Description:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              type: "text",
-              name: "desc",
-              onChange: function onChange(event) {
-                setDesc(event.target.value);
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item Amount:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              type: "number",
-              min: "1",
-              name: "amount",
-              onChange: function onChange(event) {
-                setAmount(event.target.value);
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-            children: ["Item Cost:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-              type: "number",
-              min: "1",
-              step: "0.01",
-              name: "cost",
-              onChange: function onChange(event) {
-                setCost(event.target.value);
-              }
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-            type: "submit",
-            value: "Submit"
           })]
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "id",
+            className: "form-label",
+            children: "ID"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "id",
+            required: true,
+            value: id,
+            onChange: function onChange(e) {
+              return setID(e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "item",
+            className: "form-label",
+            children: "Item Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "item",
+            required: true,
+            value: item,
+            onChange: function onChange(e) {
+              return setItem(e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "description",
+            className: "form-label",
+            children: "Description"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "text",
+            className: "form-control",
+            id: "description",
+            required: true,
+            value: description,
+            onChange: function onChange(e) {
+              return setDescription(e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "count",
+            className: "form-label",
+            children: "Count"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            className: "form-control",
+            id: "count",
+            required: true,
+            value: count,
+            onChange: function onChange(e) {
+              return setCount(e.target.valueAsNumber);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "cost",
+            className: "form-label",
+            children: "Cost"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            step: "0.01",
+            className: "form-control",
+            id: "cost",
+            required: true,
+            value: cost,
+            onChange: function onChange(e) {
+              return setCost(e.target.valueAsNumber);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "button-container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            type: "submit",
+            className: "btn btn-primary",
+            children: "Create"
+          })
+        })]
       })]
     })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ItemCreate);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
 
 /***/ }),
 
@@ -11528,7 +11550,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width:100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.5);\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n.modal-main {\r\n    position:fixed;\r\n    background: white;\r\n    width: 80%;\r\n    height: 200px;\r\n    top:50%;\r\n    left:50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n.display-block {\r\n    display: block;\r\n}\r\n.display-none {\r\n    display: none;\r\n}\r\n.modal-main p {\r\n    margin-top: 3rem;\r\n    font-weight: bold;\r\n    text-align: center;\r\n    font-size: 1.25em;\r\n}\r\n.button-container {\r\n    margin-top: 1rem;\r\n    text-align: center;\r\n}\r\n#button-yes {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n#button-no {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width:100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    font-family: 'Open Sans', sans-serif;\n}\n.modal-main {\n    position:fixed;\n    background: white;\n    width: 80%;\n    height: 200px;\n    top:50%;\n    left:50%;\n    transform: translate(-50%,-50%);\n}\n.display-block {\n    display: block;\n}\n.display-none {\n    display: none;\n}\n.modal-main p {\n    margin-top: 3rem;\n    font-weight: bold;\n    text-align: center;\n    font-size: 1.25em;\n}\n.button-container {\n    margin-top: 1rem;\n    text-align: center;\n}\n#button-yes {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n#button-no {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -11559,7 +11581,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans&family=Roboto&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_imgs_toggler_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "nav  {\n    background-color: #235789;\n    height: 80px;\n}\n.navbar-logo {\n    height: 50px;\n    margin-left: 1rem;\n    margin-right: 2rem;\n}\n.navbar-brand {\n    font-family: 'Bangers', cursive;\n    font-size: 2.25em;\n    letter-spacing: 1px;\n    color: #CCE7F7;\n    padding: 0;\n    transition: 0.3s ease;\n}\n.navbar-brand:last-of-type {\n    margin-right: 2rem;\n}\n.navbar-brand:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.nav-link {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 1.1em;\n    color: #CCE7F7;\n    transition: 0.3s ease;\n}\n.nav-link:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.navbar-toggler {\n    outline: none;\n    border: 2px solid white;\n    border-radius: 10px;\n}\n.navbar-toggler-icon {\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    height: 25px;\n    width: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "nav  {\r\n    background-color: #235789;\r\n    height: 80px;\r\n}\r\n.navbar-logo {\r\n    height: 50px;\r\n    margin-left: 1rem;\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand {\r\n    font-family: 'Bangers', cursive;\r\n    font-size: 2.25em;\r\n    letter-spacing: 1px;\r\n    color: #CCE7F7;\r\n    padding: 0;\r\n    transition: 0.3s ease;\r\n}\r\n.navbar-brand:last-of-type {\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.nav-link {\r\n    font-family: 'Open Sans', sans-serif;\r\n    font-size: 1.1em;\r\n    color: #CCE7F7;\r\n    transition: 0.3s ease;\r\n}\r\n.nav-link:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.navbar-toggler {\r\n    outline: none;\r\n    border: 2px solid white;\r\n    border-radius: 10px;\r\n}\r\n.navbar-toggler-icon {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
