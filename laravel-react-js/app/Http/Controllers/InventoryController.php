@@ -43,8 +43,6 @@ class InventoryController extends Controller
             'itemCost'=>'required'
         ]);
 
-        $itemID = $request->input('itemID');
-
         try{
             $item = new Item;
             $item->itemID = $request->itemID;
@@ -56,12 +54,12 @@ class InventoryController extends Controller
             $item->save();
 
             return response()->json([
-                'message'=>'Product Created Successfully!!'
+                'message'=>'Item Created Successfully!!'
             ]);
         }catch(\Exception $e){
             \Log::error($e->getMessage());
             return response()->json([
-                'message'=>'Something goes wrong while creating a product!!'
+                'message'=>'Something goes wrong while creating a item!!'
             ],500);
         }
     }

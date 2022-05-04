@@ -48,7 +48,7 @@ const Inventory = () => {
                     </tbody>
                 </table>
 
-                <Link to={`/create`}>
+                <Link to={`/createItem`}>
                     <button type="button" className="btn btn-info" id="new-button">Insert New Item</button>
                 </Link>
             </div>

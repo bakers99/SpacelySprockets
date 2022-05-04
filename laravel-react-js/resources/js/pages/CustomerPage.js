@@ -36,7 +36,7 @@ const CustomerPage = () => {
                     </tbody>
                 </table>
 
-                <Link to={`/createCust`}>
+                <Link to={`/createCustomer`}>
                     <button type="button" className="btn btn-info" id="new-button">Insert New Customer</button>
                 </Link>
             </div>

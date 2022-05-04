@@ -1,40 +1,33 @@
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import NavigationBar from '../components/NavigationBar'
 import '../../css/InventoryPage.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const CustomerCreate = () => {
-
+const Create = () => {
     const navigate = useNavigate();
-
-    const [category, setCategory] = useState("Cog")
-    const [id, setID] = useState("")
-    const [name, setName] = useState("")
-    const [desc, setDesc] = useState("")
-    const [amount, setAmount] = useState("")
-    const [cost, setCost] = useState("")
+    const [name, setName] = useState("Name...");
+    const [address, setAddress] = useState("Address....");
+    const [companyName, setcompanyName] = useState("Company name...");
     const [validationError,setValidationError] = useState({})
 
-    const createItem = async (e) => {
+
+    const createCustomer = async (e) => {
         e.preventDefault();
 
         const formData = new FormData()
-        formData.append('itemName', name)
-        formData.append('itemDesc', desc)
-        formData.append('itemID', id)
-        formData.append('itemCategory', category)
-        formData.append('itemCount', amount)
-        formData.append('itemCost', cost)
+        formData.append('customerName', name)
+        formData.append('customerAddress', address)
+        formData.append('companyName', companyName)
 
-        await axios.post(`http://127.0.0.1:8000/api/inventory`, formData).then(({data})=>{
-        alert("Item Sucessfully Created")
-        navigate("/inventory")
+        await axios.post(`http://127.0.0.1:8000/api/customers`, formData).then(({data})=>{
+            alert("Item successfully Created")
+            navigate("/customer")
         }).catch(({response})=>{
-        if(response.status===422){
-        setValidationError(response.data.errors)
-        }else{
-            alert("Item Creation Failed")
-        }})
+            if(response.status===422){
+                setValidationError(response.data.errors)
+            }else{
+                alert("Item Creation Failed")
+            }})
     }
 
     return (
@@ -42,66 +35,33 @@ const CustomerCreate = () => {
             <NavigationBar />
 
             <div className="container">
-                <div>
-                <h1>Create New Item</h1>
-                </div>
 
-                <div className="form-wrapper">
-                {
-                  Object.keys(validationError).length > 0 && (
-                    <div className="row">
-                      <div className="col-12">
-                        <div className="alert alert-danger">
-                          <ul className="mb-0">
-                            {
-                              Object.entries(validationError).map(([key, value])=>(
-                                <li key={key}>{value}</li>   
-                              ))
-                            }
-                          </ul>
-                        </div>
-                      </div>
+                <h1> Create Inventory Item</h1>
+
+                <form onSubmit={createCustomer}>
+                    
+                    <div className="mb-3">
+                        <label htmlFor="name" className="form-label">Customer Name</label>
+                        <input type="text" className="form-control" id="name" required value={name} onChange= {(e) => setName(e.target.value)}/>
                     </div>
-                  )
-                }
-                </div>
+                    <div className="mb-3">
+                        <label htmlFor="address" className="form-label">Customer Address</label>
+                        <input type="text" className="form-control" id="address" required value={address} onChange= {(e) => setAddress(e.target.value)}/>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="companyName" className="form-label">Company Name</label>
+                        <input type="text" className="form-control" id="companyName" required value={companyName} onChange= {(e) => setcompanyName(e.target.value)}/>
+                    </div>
 
-                <div className='form'>
-                <form onSubmit={createItem}>
-                <label>
-                Item Category:
-                <select name="category" onChange={(event)=>{setCategory(event.target.value)}}>
-                <option value="Cog">Cog</option>
-                <option value="Sprocket">Sprocket</option>    
-                </select>
-                </label>
-                <label>
-                Item ID:
-                <input type="text" name="id" onChange={(event)=>{setID(event.target.value)}} />
-                </label>
-                <label>
-                Item Name:
-                <input type="text" name="name" onChange={(event)=>{setName(event.target.value)}} />
-                </label>
-                <label>
-                Item Description:
-                <input type="text" name="desc" onChange={(event)=>{setDesc(event.target.value)}}/>
-                </label>
-                <label>
-                Item Amount:
-                <input type="number" min='1' name="amount" onChange={(event)=>{setAmount(event.target.value)}}/>
-                </label>
-                <label>
-                Item Cost:
-                <input type="number" min='1' step="0.01" name="cost" onChange={(event)=>{setCost(event.target.value)}}/>
-                </label>
-                <input type="submit" value="Submit" />
+                    <div className="button-container">
+                        <button type="submit" className="btn btn-primary">Create</button>
+                    </div>
+
                 </form>
-                </div>
 
             </div>
         </>
     )
 }
 
-export default CustomerCreate;
+export default Create;

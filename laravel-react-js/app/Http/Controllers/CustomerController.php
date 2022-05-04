@@ -37,7 +37,28 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'customerName'=>'required',
+            'customerAddress'=>'required',
+            'companyName'=>'required'
+        ]);
+
+        try{
+            $customer = new Customer;
+            $customer->customerName = $request->customerName;
+            $customer->customerAddress = $request->customerAddress;
+            $customer->companyName = $request->companyName;
+            $customer->save();
+
+            return response()->json([
+                'message'=>'Customer Created Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while creating a customer!!'
+            ],500);
+        }
     }
 
     /**
