@@ -1,7 +1,7 @@
 import {useNavigate} from "react-router-dom";
 import '../../css/Modal.css'
 
-const Modal = ({path, handleClose, show}) => {
+const Modal = ({url, path, handleClose, show, navRoute}) => {
     const showHideClassName = show ? "modal display-block" : "modal display-none";
     const navigate = useNavigate();
 
@@ -10,11 +10,11 @@ const Modal = ({path, handleClose, show}) => {
 
         console.log("fetus deletus")
 
-        fetch( 'http://127.0.0.1:8000/api/inventory/' + path, {
+        fetch( url + path, {
             method: 'DELETE',
         }).then(() => {
             alert("Delete successful.");
-            navigate('/inventory');
+            navigate(navRoute);
         });
 
     }

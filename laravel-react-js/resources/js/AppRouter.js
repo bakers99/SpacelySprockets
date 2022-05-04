@@ -4,6 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import HomePage from './pages/HomePage'
 import InventoryPage from './pages/InventoryPage'
 import CustomerPage from './pages/CustomerPage'
+import CustomerDetails from './components/CustomerDetails'
 
 import SalesPage from './pages/SalesPage'
 import SalesReport from './pages/SalesReport'
@@ -28,6 +29,7 @@ const AppRouter = () => {
                     <Route path="/create" element={<ItemCreate />} />
 
                     <Route path="/customer" element={<CustomerPage />} />
+                    <Route path="/customer/:id" element={<CustomerDetails />} />
                     <Route path="/sales" element={<SalesPage />} />
                     <Route path="/sales-report" element={<SalesReport />} />
 

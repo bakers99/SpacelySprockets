@@ -48,7 +48,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        return Customer::find($id);
     }
 
     /**
@@ -82,6 +82,8 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $item = Customer::find($id);
+        $item->delete();
     }
 }

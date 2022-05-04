@@ -2,13 +2,13 @@ import {useState} from "react";
 import {useParams} from "react-router-dom";
 import useFetch from "../useFetch";
 import NavigationBar from './NavigationBar'
-import Modal from '../components/Modal'
+import Modal from './Modal'
 
 
 const ItemDetails = () => {
     const {id} = useParams();
-    const url = 'http://127.0.0.1:8000/api/inventory/'
-    const navRoute ='/inventory';
+    const url = 'http://127.0.0.1:8000/api/customers/'
+    const navRoute ='/customer';
     const {data, isPending, error } = useFetch(url + id);
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
@@ -26,7 +26,7 @@ const ItemDetails = () => {
             <NavigationBar />
 
             <div className="container">
-                <h1>Item ID: {id}</h1>
+                <h1>Customer ID: {id}</h1>
 
                 {error}<div>{error}</div>
                 {isPending && <div>Loading...</div>}
@@ -35,32 +35,28 @@ const ItemDetails = () => {
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Category</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Cost</th>
-                        <th scope="col">Count</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Company Name</th>
 
                     </tr>
                     </thead>
                     <tbody>
                     { data && (
-                        <tr key={data.itemID}>
-                            <td>{data.itemID}</td>
-                            <td>{data.itemCategory}</td>
-                            <td>{data.itemName}</td>
-                            <td>{data.itemCost}</td>
-                            <td>{data.itemCount}</td>
-                            <td>{data.itemDesc}</td>
+                        <tr key={data.customerID}>
+                            <td>{data.customerID}</td>
+                            <td>{data.customerName}</td>
+                            <td>{data.customerAddress}</td>
+                            <td>{data.companyName}</td>
                             <td>
-                                <button key={data.id} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
+                                <button key={data.customerID} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
                             </td>
                         </tr>
                     )}
                     </tbody>
                 </table>
 
-                <Modal url={url} path={id} show={modalIsOpen} handleClose={setModalIsOpenToFalse} navRoute={navRoute}/>
+                <Modal url={url} path={id} show={modalIsOpen} handleClose={setModalIsOpenToFalse} navRoute={navRoute} />
             </div>
         </>
     )
