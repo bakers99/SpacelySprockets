@@ -8,17 +8,17 @@ import useFetch from "../useFetch";
 
 const Update = () => {
     const {id} = useParams();
-    const url = 'http://127.0.0.1:8000/api/customers/'
-    const {data, isPending, error } = useFetch(url + id);
+    const url = `http://127.0.0.1:8000/api/customers/`
+    // const {data, isPending, error } = useFetch(url + id);
 
     useEffect(() => {
 
-        fetch(url)
+        fetch(url + id)
         .then(response => response.json())
         .then(data => {
-            setName(data[0].customerName)
-            setAddress(data[0].customerAddress)
-            setcompanyName(data[0].companyName)
+            setName(data.customerName)
+            setAddress(data.customerAddress)
+            setcompanyName(data.companyName)
         });
       }, []);    
     
