@@ -7557,7 +7557,7 @@ var Update = function Update(props) {
                 route = "http://127.0.0.1:8000/api/sales/".concat(id);
                 _context.next = 4;
                 return axios.get(route).then(function (response) {
-                  return setReportData({
+                  setReportData({
                     customer_customerID: response.data.customer_customerID,
                     item_itemID: response.data.item_itemID,
                     saleDate: response.data.saleDate,

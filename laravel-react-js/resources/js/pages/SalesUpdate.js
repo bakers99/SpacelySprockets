@@ -11,13 +11,14 @@ const Update = (props) => {
     const {customer_data, inventory_data, sales_data} = props;
     const[report_data, setReportData] = useState({ customer_customerID: "", item_itemID: "", saleDate: "", saleTime: "", saleAmount: ""});
 
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 let route = `http://127.0.0.1:8000/api/sales/${id}`;
                 await axios.get(route)
-                    .then(response => setReportData({ customer_customerID: response.data.customer_customerID, item_itemID: response.data.item_itemID, saleDate: response.data.saleDate, saleTime: response.data.saleTime, saleAmount: response.data.saleAmount}));
+                    .then(response =>{
+                         setReportData({ customer_customerID: response.data.customer_customerID, item_itemID: response.data.item_itemID, saleDate: response.data.saleDate, saleTime: response.data.saleTime, saleAmount: response.data.saleAmount});
+                        });
             } catch (err) {
                 console.log(err)
             }

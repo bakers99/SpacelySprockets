@@ -42,6 +42,7 @@ class SalesController extends Controller
 
         $item = Item::find($request->item_itemID);
         $total = ($item->itemCost*$request->saleAmount);
+        $newamount=($item->itemCount-$request->saleAmount);
 
 
         try{
@@ -53,6 +54,10 @@ class SalesController extends Controller
             $sales->saleAmount = $request->saleAmount;
             $sales->salePrice = $total;
             $sales->save();
+
+            $items = Item::find($request->item_itemID);
+            $items->itemCount = $newamount;
+            $items->save();
 
             return response()->json([
                 'message'=>'Sale transaction completed Successfully!!'
@@ -107,6 +112,7 @@ class SalesController extends Controller
 
         $item = Item::find($request->item_itemID);
         $total = ($item->itemCost*$request->saleAmount);
+        $newamount=($item->itemCount-$request->saleAmount);
 
         try{
             $sale = Sale::find($id);
@@ -117,6 +123,10 @@ class SalesController extends Controller
             $sale->saleAmount = $request->saleAmount;
             $sale->salePrice = $total;
             $sale->save();
+
+            $items = Item::find($request->item_itemID);
+            $items->itemCount = $newamount;
+            $items->save();
 
             return response()->json([
                 'message'=>'Customer Created Successfully!!'
