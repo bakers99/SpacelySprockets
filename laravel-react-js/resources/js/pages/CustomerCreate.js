@@ -39,7 +39,7 @@ const Create = () => {
                 <h1> Create Inventory Item</h1>
 
                 <form onSubmit={createCustomer}>
-                    
+
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Customer Name</label>
                         <input type="text" className="form-control" id="name" required value={name} onChange= {(e) => setName(e.target.value)}/>

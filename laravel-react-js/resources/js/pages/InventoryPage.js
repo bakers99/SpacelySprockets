@@ -7,11 +7,11 @@ import {Link} from "react-router-dom";
 
 
 
-const Inventory = () => {
-    const {data, isPending, error} = useFetch('http://127.0.0.1:8000/api/inventory/')
+const Inventory = (props) => {
+    const {inventory_data} = props;
+
     const[category, setCategory] = useState("Sprocket")
 
-    console.log(data);
 
     function getCategory(event) {
         setCategory(event.target.value);
@@ -32,9 +32,6 @@ const Inventory = () => {
                     </select>
                 </form>
 
-                {error}<div>{error}</div>
-                {isPending && <div>Loading...</div>}
-
                 <table className="table">
                     <thead>
                     <tr>
@@ -44,7 +41,7 @@ const Inventory = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    { data && <Item inventory={data} choice={category} />}
+                        <Item inventory_data={inventory_data} choice={category} />
                     </tbody>
                 </table>
 
@@ -63,9 +60,9 @@ export default Inventory;
 
 
 const Item = (props) => {
-    const {choice, inventory} = props;
+    const {choice, inventory_data} = props;
 
-    const DisplayChoice = inventory.map(item => {
+    const DisplayChoice = inventory_data.map(item => {
         if(item.itemCategory === choice) {
             return (
                 <tr key={item.itemID}>

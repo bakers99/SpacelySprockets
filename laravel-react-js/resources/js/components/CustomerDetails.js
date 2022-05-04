@@ -5,7 +5,7 @@ import NavigationBar from './NavigationBar'
 import Modal from './Modal'
 
 
-const ItemDetails = () => {
+const CustomerDetails = () => {
     const {id} = useParams();
     const url = 'http://127.0.0.1:8000/api/customers/'
     const navRoute ='/customer';
@@ -49,7 +49,7 @@ const ItemDetails = () => {
                             <td>{data.customerAddress}</td>
                             <td>{data.companyName}</td>
                             <td>
-                                <button key={data.customerID} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
+                                <button key={data.id} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
                             </td>
                         </tr>
                     )}
@@ -62,4 +62,4 @@ const ItemDetails = () => {
     )
 }
 
-export default ItemDetails;
+export default CustomerDetails;
