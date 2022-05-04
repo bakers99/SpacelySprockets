@@ -6,6 +6,7 @@ import InventoryPage from './pages/InventoryPage'
 import CustomerPage from './pages/CustomerPage'
 import CustomerDetails from './components/CustomerDetails'
 import CustomerCreate from './pages/CustomerCreate'
+import CustomerUpdate from './pages/CustomerUpdate'
 
 import SalesPage from './pages/SalesPage'
 import SalesReport from './pages/SalesReport'
@@ -32,6 +33,7 @@ const AppRouter = () => {
                     <Route path="/customer" element={<CustomerPage />} />
                     <Route path="/customer/:id" element={<CustomerDetails />} />
                     <Route path="/createCustomer" element={<CustomerCreate />} />
+                    <Route path="/updateCustomer/:id" element={<CustomerUpdate />} />
                     <Route path="/sales" element={<SalesPage />} />
                     <Route path="/sales-report" element={<SalesReport />} />
 

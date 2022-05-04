@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import useFetch from "../useFetch";
 import NavigationBar from './NavigationBar'
 import Modal from './Modal'
+import { useNavigate } from "react-router-dom";
 
 
 const ItemDetails = () => {
@@ -10,6 +11,7 @@ const ItemDetails = () => {
     const url = 'http://127.0.0.1:8000/api/customers/'
     const navRoute ='/customer';
     const {data, isPending, error } = useFetch(url + id);
+    const navigate = useNavigate();
 
     const [modalIsOpen,setModalIsOpen] = useState(false);
 
@@ -20,6 +22,11 @@ const ItemDetails = () => {
     const setModalIsOpenToFalse =()=>{
         setModalIsOpen(false)
     }
+
+    const routeChange = () =>{ 
+        let path = `/updateCustomer/${id}`; 
+        navigate(path);
+      }
 
     return (
         <>
@@ -50,6 +57,7 @@ const ItemDetails = () => {
                             <td>{data.companyName}</td>
                             <td>
                                 <button key={data.customerID} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
+                                <button key={data.customerID} type="button" className="btn btn-primary" onClick={routeChange}>Update</button>
                             </td>
                         </tr>
                     )}

@@ -90,9 +90,31 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,)
     {
-        //
+        $request->validate([
+            'customerName'=>'required',
+            'customerAddress'=>'required',
+            'companyName'=>'required'
+        ]);
+
+        try{
+            $customer = Customer::find($request->customerID);
+            $customer->customerName = $request->customerName;
+            $customer->customerAddress = $request->customerAddress;
+            $customer->companyName = $request->companyName;
+            $customer->save();
+
+
+            return response()->json([
+                'message'=>'Customer Created Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while creating a customer!!'
+            ],500);
+        }
     }
 
     /**
