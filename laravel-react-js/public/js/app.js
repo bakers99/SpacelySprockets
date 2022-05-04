@@ -6103,7 +6103,7 @@ var Create = function Create() {
               _context.next = 7;
               return axios.post("http://127.0.0.1:8000/api/customers", formData).then(function (_ref2) {
                 var data = _ref2.data;
-                alert("Item successfully Created");
+                alert("Customer Successfully Created");
                 navigate("/customer");
               })["catch"](function (_ref3) {
                 var response = _ref3.response;
@@ -6111,7 +6111,7 @@ var Create = function Create() {
                 if (response.status === 422) {
                   setValidationError(response.data.errors);
                 } else {
-                  alert("Item Creation Failed");
+                  alert("Customer Creation Failed");
                 }
               });
 
@@ -6370,19 +6370,28 @@ var Update = function Update() {
       isPending = _useFetch.isPending,
       error = _useFetch.error;
 
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      setName(data[0].customerName);
+      setAddress(data[0].customerAddress);
+      setcompanyName(data[0].companyName);
+    });
+  }, []);
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Name..."),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),
       name = _useState2[0],
       setName = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Address...."),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
       address = _useState4[0],
       setAddress = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Company name..."),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState6 = _slicedToArray(_useState5, 2),
       companyName = _useState6[0],
       setcompanyName = _useState6[1];
@@ -6829,7 +6838,7 @@ var Create = function Create() {
               _context.next = 10;
               return axios.post("http://127.0.0.1:8000/api/inventory", formData).then(function (_ref2) {
                 var data = _ref2.data;
-                alert("Item successfully Created");
+                alert("Item Successfully Created");
                 navigate("/inventory");
               })["catch"](function (_ref3) {
                 var response = _ref3.response;
@@ -7075,18 +7084,18 @@ var SalesPage = function SalesPage(props) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              // e.preventDefault();
+              e.preventDefault();
               formData = new FormData();
               formData.append('customer_customerID', customerName);
               formData.append('item_itemID', item);
-              formData.append('salesDate', saleDate);
+              formData.append('saleDate', saleDate);
               formData.append('saleTime', saleTime);
               formData.append('saleAmount', saleAmount);
               formData.append('salePrice', salePrice);
-              _context.next = 9;
+              _context.next = 10;
               return axios.post("http://127.0.0.1:8000/api/sales", formData).then(function (_ref2) {
                 var data = _ref2.data;
-                alert("Item successfully Created");
+                alert("Sale Successfully Created");
                 navigate("/sales");
               })["catch"](function (_ref3) {
                 var response = _ref3.response;
@@ -7094,11 +7103,11 @@ var SalesPage = function SalesPage(props) {
                 if (response.status === 422) {
                   setValidationError(response.data.errors);
                 } else {
-                  alert("Transaction Failed");
+                  alert("Sale Creation Failed");
                 }
               });
 
-            case 9:
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -7140,7 +7149,7 @@ var SalesPage = function SalesPage(props) {
             htmlFor: "customer",
             className: "form-label",
             children: "Customer"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("select", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
             className: "form-select",
             name: "category",
             required: true,
@@ -7148,7 +7157,13 @@ var SalesPage = function SalesPage(props) {
             onChange: function onChange(e) {
               return setCustomerName(e.target.value);
             },
-            children: GetCustomers
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Customer"
+            }), GetCustomers]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "mb-3",
@@ -7188,7 +7203,7 @@ var SalesPage = function SalesPage(props) {
             htmlFor: "item",
             className: "form-label",
             children: "Item Purchased"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("select", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
             className: "form-select",
             name: "itemID",
             required: true,
@@ -7196,7 +7211,13 @@ var SalesPage = function SalesPage(props) {
             onChange: function onChange(e) {
               return setItem(e.target.value);
             },
-            children: GetItems
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Item"
+            }), GetItems]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "mb-3",
@@ -12597,7 +12618,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 1.1em;\n}\nform select {\n    margin-left: .5rem;\n}\nh1 {\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n}\ntable {\n    margin-top: 2rem;\n}\ntable th {\n    font-family: 'Roboto', sans-serif;\n}\n\n#new-button {\n    margin-top: 1rem;\n}\n\n/* Create Page */\n\ntable {\n    font-family: 'Open Sans', sans-serif;\n}\nform select {\n    margin-left: 0;\n}\n#button-container {\n    text-align: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container {\r\n    font-family: 'Open Sans', sans-serif;\r\n    font-size: 1.1em;\r\n}\r\nform select {\r\n    margin-left: .5rem;\r\n}\r\nh1 {\r\n    font-family: 'Roboto', sans-serif;\r\n    text-align: center;\r\n}\r\ntable {\r\n    margin-top: 2rem;\r\n}\r\ntable th {\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n#new-button {\r\n    margin-top: 1rem;\r\n}\r\n\r\n/* Create Page */\r\n\r\ntable {\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\nform select {\r\n    margin-left: 0;\r\n}\r\n#button-container {\r\n    text-align: center;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12622,7 +12643,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width:100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    font-family: 'Open Sans', sans-serif;\n}\n.modal-main {\n    position:fixed;\n    background: white;\n    width: 80%;\n    height: 200px;\n    top:50%;\n    left:50%;\n    transform: translate(-50%,-50%);\n}\n.display-block {\n    display: block;\n}\n.display-none {\n    display: none;\n}\n.modal-main p {\n    margin-top: 3rem;\n    font-weight: bold;\n    text-align: center;\n    font-size: 1.25em;\n}\n.button-container {\n    margin-top: 1rem;\n    text-align: center;\n}\n#button-yes {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n#button-no {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width:100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.5);\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n.modal-main {\r\n    position:fixed;\r\n    background: white;\r\n    width: 80%;\r\n    height: 200px;\r\n    top:50%;\r\n    left:50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n.display-block {\r\n    display: block;\r\n}\r\n.display-none {\r\n    display: none;\r\n}\r\n.modal-main p {\r\n    margin-top: 3rem;\r\n    font-weight: bold;\r\n    text-align: center;\r\n    font-size: 1.25em;\r\n}\r\n.button-container {\r\n    margin-top: 1rem;\r\n    text-align: center;\r\n}\r\n#button-yes {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n#button-no {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12653,7 +12674,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans&family=Roboto&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_imgs_toggler_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "nav  {\r\n    background-color: #235789;\r\n    height: 80px;\r\n}\r\n.navbar-logo {\r\n    height: 50px;\r\n    margin-left: 1rem;\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand {\r\n    font-family: 'Bangers', cursive;\r\n    font-size: 2.25em;\r\n    letter-spacing: 1px;\r\n    color: #CCE7F7;\r\n    padding: 0;\r\n    transition: 0.3s ease;\r\n}\r\n.navbar-brand:last-of-type {\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.nav-link {\r\n    font-family: 'Open Sans', sans-serif;\r\n    font-size: 1.1em;\r\n    color: #CCE7F7;\r\n    transition: 0.3s ease;\r\n}\r\n.nav-link:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.navbar-toggler {\r\n    outline: none;\r\n    border: 2px solid white;\r\n    border-radius: 10px;\r\n}\r\n.navbar-toggler-icon {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "nav  {\n    background-color: #235789;\n    height: 80px;\n}\n.navbar-logo {\n    height: 50px;\n    margin-left: 1rem;\n    margin-right: 2rem;\n}\n.navbar-brand {\n    font-family: 'Bangers', cursive;\n    font-size: 2.25em;\n    letter-spacing: 1px;\n    color: #CCE7F7;\n    padding: 0;\n    transition: 0.3s ease;\n}\n.navbar-brand:last-of-type {\n    margin-right: 2rem;\n}\n.navbar-brand:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.nav-link {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 1.1em;\n    color: #CCE7F7;\n    transition: 0.3s ease;\n}\n.nav-link:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.navbar-toggler {\n    outline: none;\n    border: 2px solid white;\n    border-radius: 10px;\n}\n.navbar-toggler-icon {\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    height: 25px;\n    width: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

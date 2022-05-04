@@ -26,7 +26,7 @@ const Create = () => {
         formData.append('itemCost', cost)
 
         await axios.post(`http://127.0.0.1:8000/api/inventory`, formData).then(({data})=>{
-            alert("Item successfully Created")
+            alert("Item Successfully Created")
             navigate("/inventory")
         }).catch(({response})=>{
             if(response.status===422){

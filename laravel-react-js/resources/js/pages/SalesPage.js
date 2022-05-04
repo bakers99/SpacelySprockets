@@ -21,25 +21,24 @@ const SalesPage = (props) => {
     const [validationError,setValidationError] = useState({})
 
     const createTransaction = async (e) => {
-        // e.preventDefault();
+        e.preventDefault();
 
         const formData = new FormData()
         formData.append('customer_customerID', customerName)
         formData.append('item_itemID', item)
-        formData.append('salesDate', saleDate)
+        formData.append('saleDate', saleDate)
         formData.append('saleTime', saleTime)
         formData.append('saleAmount', saleAmount)
         formData.append('salePrice', salePrice)
 
-
         await axios.post(`http://127.0.0.1:8000/api/sales`, formData).then(({data})=>{
-            alert("Item successfully Created")
+            alert("Sale Successfully Created")
             navigate("/sales")
         }).catch(({response})=>{
             if(response.status===422){
                 setValidationError(response.data.errors)
             }else{
-                alert("Transaction Failed")
+                alert("Sale Creation Failed")
             }})
     }
 
@@ -71,6 +70,7 @@ const SalesPage = (props) => {
                     <div className="mb-3">
                         <label htmlFor="customer" className="form-label">Customer</label>
                         <select className="form-select" name="category" required value={customerName} onChange= {(e) => setCustomerName(e.target.value)}>
+                        <option value="" disabled selected hidden>Select Customer</option>
                             {GetCustomers}
                         </select>
                     </div>
@@ -85,6 +85,7 @@ const SalesPage = (props) => {
                     <div className="mb-3">
                         <label htmlFor="item" className="form-label">Item Purchased</label>
                         <select className="form-select" name="itemID" required value={item} onChange= {(e) => setItem(e.target.value)}>
+                        <option value="" disabled selected hidden>Select Item</option>
                             {GetItems}
                         </select>
                     </div>

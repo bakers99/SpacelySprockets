@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {useParams} from "react-router-dom";
 import NavigationBar from '../components/NavigationBar'
@@ -10,14 +10,26 @@ const Update = () => {
     const {id} = useParams();
     const url = 'http://127.0.0.1:8000/api/customers/'
     const {data, isPending, error } = useFetch(url + id);
+
+    useEffect(() => {
+
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            setName(data[0].customerName)
+            setAddress(data[0].customerAddress)
+            setcompanyName(data[0].companyName)
+        });
+      }, []);    
     
 
-    const navigate = useNavigate();
-    const [name, setName] = useState("Name...");
-    const [address, setAddress] = useState("Address....");
-    const [companyName, setcompanyName] = useState("Company name...");
-    const [validationError,setValidationError] = useState({})
+   
 
+    const navigate = useNavigate();
+    const [name, setName] = useState("");
+    const [address, setAddress] = useState("");
+    const [companyName, setcompanyName] = useState("");
+    const [validationError,setValidationError] = useState({})
 
     const updateCustomer = async (e) => {
         e.preventDefault();

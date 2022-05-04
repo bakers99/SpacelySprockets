@@ -20,13 +20,13 @@ const Create = () => {
         formData.append('companyName', companyName)
 
         await axios.post(`http://127.0.0.1:8000/api/customers`, formData).then(({data})=>{
-            alert("Item successfully Created")
+            alert("Customer Successfully Created")
             navigate("/customer")
         }).catch(({response})=>{
             if(response.status===422){
                 setValidationError(response.data.errors)
             }else{
-                alert("Item Creation Failed")
+                alert("Customer Creation Failed")
             }})
     }
 
