@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sale;
+use App\Models\Item;
 
 class SalesController extends Controller
 {
@@ -37,8 +38,12 @@ class SalesController extends Controller
             'saleDate'=>'required',
             'saleTime'=>'required',
             'saleAmount'=>'required',
-            'salePrice'=>'required'
         ]);
+
+        $item = Item::find($request->item_itemID);
+        $total = ($item->itemCost*$request->saleAmount);
+
+        error_log($total);
 
         try{
             $sales = new Sale;
@@ -47,7 +52,7 @@ class SalesController extends Controller
             $sales->saleDate = $request->saleDate;
             $sales->saleTime = $request->saleTime;
             $sales->saleAmount = $request->saleAmount;
-            $sales->salePrice = $request->salePrice;
+            $sales->salePrice = $total;
             $sales->save();
 
             return response()->json([

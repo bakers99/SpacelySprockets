@@ -13,10 +13,7 @@ const SalesPage = (props) => {
     const[saleTime, setSaleTime] = useState("");
     const[item, setItem] = useState("");
     const[saleAmount, setSaleAmount] = useState(1);
-    const[salePrice, setSalePrice] = useState(.99);
 
-    console.log(item)
-    console.log(customerName)
 
     const [validationError,setValidationError] = useState({})
 
@@ -29,11 +26,10 @@ const SalesPage = (props) => {
         formData.append('saleDate', saleDate)
         formData.append('saleTime', saleTime)
         formData.append('saleAmount', saleAmount)
-        formData.append('salePrice', salePrice)
 
         await axios.post(`http://127.0.0.1:8000/api/sales`, formData).then(({data})=>{
             alert("Sale Successfully Created")
-            navigate("/sales")
+            window.location.reload()
         }).catch(({response})=>{
             if(response.status===422){
                 setValidationError(response.data.errors)
@@ -93,11 +89,7 @@ const SalesPage = (props) => {
                         <label htmlFor="saleAmount" className="form-label">Amount Purchased:</label>
                         <input type="number" className="form-control" id="saleDate" required value={saleAmount} onChange= {(e) => setSaleAmount(e.target.valueAsNumber)}/>
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="salePrice" className="form-label">Item Price:</label>
-                        <input type="number" className="form-control" id="salePrice" required value={salePrice} onChange= {(e) => setSalePrice(e.target.valueAsNumber)}/>
-                    </div>
-
+                    
                     <div className="button-container">
                         <button type="submit" className="btn btn-primary">Create</button>
                     </div>
