@@ -10,7 +10,7 @@ const Modal = ({path, handleClose, show}) => {
 
         console.log("fetus deletus")
 
-        fetch( 'http://127.0.0.1:8000/inventory/' + path, {
+        fetch( 'http://127.0.0.1:8000/api/inventory/' + path, {
             method: 'DELETE',
         }).then(() => {
             alert("Delete successful.");

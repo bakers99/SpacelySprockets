@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\SalesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\CustomerController;
 
 
 /*
@@ -21,6 +21,6 @@ Route::get('{reactRoutes}', function () {
 })->where('reactRoutes', '^((?!api).)*$'); // except 'api' word
 
 Route::resource('/api/sales', SalesController::class);
-Route::resource('/api/customers', CustomersController::class);
+Route::resource('/api/customers', CustomerController::class);
 Route::resource('api/inventory', InventoryController::class);
 Route::resource('api/inventory/{id}', ItemsController::class);

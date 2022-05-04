@@ -108,6 +108,9 @@ class InventoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $item = Item::find($id);
+        $item->delete();
+
     }
 }

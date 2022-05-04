@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 
-class Customer extends Model
+class Customer extends Eloquent
 {
-    use HasFactory;
+    protected $primaryKey = 'customerID';
 }
