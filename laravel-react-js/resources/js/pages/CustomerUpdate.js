@@ -5,10 +5,12 @@ import NavigationBar from '../components/NavigationBar'
 import '../../css/InventoryPage.css';
 import useFetch from "../useFetch";
 
+
 const Update = () => {
     const {id} = useParams();
     const url = 'http://127.0.0.1:8000/api/customers/'
     const {data, isPending, error } = useFetch(url + id);
+    
 
     const navigate = useNavigate();
     const [name, setName] = useState("Name...");
@@ -24,7 +26,15 @@ const Update = () => {
         formData.append('customerAddress', address)
         formData.append('companyName', companyName)
 
-        await axios.patch(`http://127.0.0.1:8000/api/customers/${id}`, formData).then(({data})=>{
+        // Build the data object.
+        const data = {};
+        formData.forEach((value, key) => (data[key] = value));
+        // Log the data.
+        console.log(data);
+
+
+
+        await axios.patch(`http://127.0.0.1:8000/api/customers/${id}`, data).then(({data})=>{
             alert("Customer Successfully Updated")
             navigate("/customer")
         }).catch(({response})=>{

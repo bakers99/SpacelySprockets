@@ -92,11 +92,13 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $request->validate([
             'customerName'=>'required',
             'customerAddress'=>'required',
             'companyName'=>'required'
         ]);
+        
 
         try{
             $customer = Customer::find($id);
