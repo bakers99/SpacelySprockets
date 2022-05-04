@@ -92,13 +92,13 @@ class CustomerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate([
             'customerName'=>'required',
             'customerAddress'=>'required',
             'companyName'=>'required'
         ]);
-        
+
 
         try{
             $customer = Customer::find($id);
@@ -114,7 +114,7 @@ class CustomerController extends Controller
         }catch(\Exception $e){
             \Log::error($e->getMessage());
             return response()->json([
-                'message'=>'Something goes wrong while creating a customer!!'
+                'message'=>'Something goes wrong while updating a customer!!'
             ],500);
         }
     }

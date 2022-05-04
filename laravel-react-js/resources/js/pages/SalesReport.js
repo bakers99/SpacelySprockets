@@ -1,9 +1,11 @@
 import {useState} from "react";
 import NavigationBar from '../components/NavigationBar'
 import '../../css/InventoryPage.css';
+import {useNavigate} from "react-router-dom";
 
 
 const SalesReport = (props) => {
+    const navigate = useNavigate();
     const {customer_data, inventory_data, sales_data} = props;
 
     const[customerName, setCustomerName] = useState("1");
@@ -28,16 +30,19 @@ const SalesReport = (props) => {
     const handleDelete = (saleID) => {
         console.log("delete")
 
-        // fetch(`${process.env.REACT_APP_API_URL}/api/users/${id}`, {
-        //     method: 'DELETE',
-        // }).then(() => {
-        //     alert("Delete successful.");
-        //     window.location.reload();
-        // });
+        fetch(`http://127.0.0.1:8000/api/sales/${saleID}`, {
+            method: 'DELETE',
+        }).then(() => {
+            alert("Delete successful.");
+            window.location.reload();
+        });
     }
-    const handleUpdate = (saleID, customer_customerID, item_itemID, saleDate, salePrice, saleAmount) => {
-        console.log("update")
+
+    const routeChange = (saleID) =>{
+        let path = `/sales-report/${saleID}`;
+        navigate(path);
     }
+
     const SalesData = sales_data.map(row => {
 
         if(parseInt(customerName) === row.customer_customerID && itemName === row.item_itemID && minimumPrice < row.salePrice) {
@@ -49,7 +54,7 @@ const SalesReport = (props) => {
                     <td>{row.salePrice}</td>
                     <td>{row.saleAmount}</td>
                     <td>
-                        <button key={row.id} type="button" className="btn btn-success" onClick={() => handleUpdate(row.saleID, row.customer_customerID, row.item_itemID, row.saleDate, row.salePrice, row.saleAmount)}>Update</button>
+                        <button key={row.customerID} type="button" className="btn btn-success" onClick={() => routeChange(row.saleID)}>Update</button>
                     </td>
                     <td >
                         <button key={row.id} type="button" className="btn btn-danger" onClick={() => handleDelete(row.saleID)}>Delete</button>

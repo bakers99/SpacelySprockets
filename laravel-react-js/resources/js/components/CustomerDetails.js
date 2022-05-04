@@ -23,8 +23,8 @@ const CustomerDetails = () => {
         setModalIsOpen(false)
     }
 
-    const routeChange = () =>{ 
-        let path = `/updateCustomer/${id}`; 
+    const routeChange = () =>{
+        let path = `/updateCustomer/${id}`;
         navigate(path);
       }
 
@@ -56,8 +56,10 @@ const CustomerDetails = () => {
                             <td>{data.customerAddress}</td>
                             <td>{data.companyName}</td>
                             <td>
+                                <button key={data.customerID} type="button" className="btn btn-success" onClick={routeChange}>Update</button>
+                            </td>
+                            <td>
                                 <button key={data.customerID} type="button" className="btn btn-danger" onClick={setModalIsOpenToTrue}>Delete</button>
-                                <button key={data.customerID} type="button" className="btn btn-primary" onClick={routeChange}>Update</button>
                             </td>
                         </tr>
                     )}

@@ -8,8 +8,6 @@ const Modal = ({url, path, handleClose, show, navRoute}) => {
     const handleDelete = (e) => {
         e.preventDefault();
 
-        console.log("fetus deletus")
-
         fetch( url + path, {
             method: 'DELETE',
         }).then(() => {

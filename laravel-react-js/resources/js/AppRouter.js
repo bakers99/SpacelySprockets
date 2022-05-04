@@ -2,7 +2,11 @@ import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import HomePage from './pages/HomePage'
+
 import InventoryPage from './pages/InventoryPage'
+import ItemDetails from "./components/ItemDetails";
+import ItemCreate from './pages/ItemCreate'
+
 import CustomerPage from './pages/CustomerPage'
 import CustomerDetails from './components/CustomerDetails'
 import CustomerCreate from './pages/CustomerCreate'
@@ -10,15 +14,13 @@ import CustomerUpdate from './pages/CustomerUpdate'
 
 import SalesPage from './pages/SalesPage'
 import SalesReport from './pages/SalesReport'
-
-import ItemDetails from "./components/ItemDetails";
-import ItemCreate from './pages/ItemCreate'
+import SalesUpdate from './pages/SalesUpdate'
 
 
 
 
-// import ItemDetails from "./ItemDetails";
-// import CreatePage from "./CreatePage";
+
+
 
 const AppRouter = () => {
 
@@ -59,6 +61,7 @@ const AppRouter = () => {
                     <Route path="/updateCustomer/:id" element={<CustomerUpdate />} />
                     <Route path="/sales" element={<SalesPage customer_data={customer_data} inventory_data={inventory_data} />} />
                     <Route path="/sales-report" element={<SalesReport customer_data={customer_data} inventory_data={inventory_data} sales_data={sales_data} />} />
+                    <Route path="/sales-report/:id" element={<SalesUpdate customer_data={customer_data} inventory_data={inventory_data} sales_data={sales_data} />} />
 
 
                     {/*<Route path="/create" element={<CreatePage />} />*/}

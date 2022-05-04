@@ -5381,19 +5381,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _pages_HomePage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/HomePage */ "./resources/js/pages/HomePage.js");
 /* harmony import */ var _pages_InventoryPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/InventoryPage */ "./resources/js/pages/InventoryPage.js");
-/* harmony import */ var _pages_CustomerPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/CustomerPage */ "./resources/js/pages/CustomerPage.js");
-/* harmony import */ var _components_CustomerDetails__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/CustomerDetails */ "./resources/js/components/CustomerDetails.js");
-/* harmony import */ var _pages_CustomerCreate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/CustomerCreate */ "./resources/js/pages/CustomerCreate.js");
-/* harmony import */ var _pages_CustomerUpdate__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/CustomerUpdate */ "./resources/js/pages/CustomerUpdate.js");
-/* harmony import */ var _pages_SalesPage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/SalesPage */ "./resources/js/pages/SalesPage.js");
-/* harmony import */ var _pages_SalesReport__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/SalesReport */ "./resources/js/pages/SalesReport.js");
-/* harmony import */ var _components_ItemDetails__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ItemDetails */ "./resources/js/components/ItemDetails.js");
-/* harmony import */ var _pages_ItemCreate__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/ItemCreate */ "./resources/js/pages/ItemCreate.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_ItemDetails__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ItemDetails */ "./resources/js/components/ItemDetails.js");
+/* harmony import */ var _pages_ItemCreate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/ItemCreate */ "./resources/js/pages/ItemCreate.js");
+/* harmony import */ var _pages_CustomerPage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/CustomerPage */ "./resources/js/pages/CustomerPage.js");
+/* harmony import */ var _components_CustomerDetails__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CustomerDetails */ "./resources/js/components/CustomerDetails.js");
+/* harmony import */ var _pages_CustomerCreate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/CustomerCreate */ "./resources/js/pages/CustomerCreate.js");
+/* harmony import */ var _pages_CustomerUpdate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/CustomerUpdate */ "./resources/js/pages/CustomerUpdate.js");
+/* harmony import */ var _pages_SalesPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/SalesPage */ "./resources/js/pages/SalesPage.js");
+/* harmony import */ var _pages_SalesReport__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/SalesReport */ "./resources/js/pages/SalesReport.js");
+/* harmony import */ var _pages_SalesUpdate__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/SalesUpdate */ "./resources/js/pages/SalesUpdate.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -5418,8 +5419,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
- // import ItemDetails from "./ItemDetails";
-// import CreatePage from "./CreatePage";
+
 
 
 
@@ -5460,44 +5460,51 @@ var AppRouter = function AppRouter() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     getData();
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.BrowserRouter, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.BrowserRouter, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_HomePage__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/inventory",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_InventoryPage__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_InventoryPage__WEBPACK_IMPORTED_MODULE_3__["default"], {
             inventory_data: inventory_data
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/inventory/:id",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_ItemDetails__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_ItemDetails__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/createItem",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_ItemCreate__WEBPACK_IMPORTED_MODULE_11__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_ItemCreate__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/customer",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_CustomerPage__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_CustomerPage__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/customer/:id",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_CustomerDetails__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_CustomerDetails__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/createCustomer",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_CustomerCreate__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_CustomerCreate__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/updateCustomer/:id",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_CustomerUpdate__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_CustomerUpdate__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/sales",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_SalesPage__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_SalesPage__WEBPACK_IMPORTED_MODULE_10__["default"], {
             customer_data: customer_data,
             inventory_data: inventory_data
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_14__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
           path: "/sales-report",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_pages_SalesReport__WEBPACK_IMPORTED_MODULE_9__["default"], {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_SalesReport__WEBPACK_IMPORTED_MODULE_11__["default"], {
+            customer_data: customer_data,
+            inventory_data: inventory_data,
+            sales_data: sales_data
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_15__.Route, {
+          path: "/sales-report/:id",
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_pages_SalesUpdate__WEBPACK_IMPORTED_MODULE_12__["default"], {
             customer_data: customer_data,
             inventory_data: inventory_data,
             sales_data: sales_data
@@ -5511,7 +5518,7 @@ var AppRouter = function AppRouter() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AppRouter);
 
 if (document.getElementById('app-router')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(AppRouter, {}), document.getElementById('app-router'));
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(AppRouter, {}), document.getElementById('app-router'));
 }
 
 /***/ }),
@@ -5683,18 +5690,20 @@ var CustomerDetails = function CustomerDetails() {
               children: data.customerAddress
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
               children: data.companyName
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("td", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                type: "button",
+                className: "btn btn-success",
+                onClick: routeChange,
+                children: "Update"
+              }, data.customerID)
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                 type: "button",
                 className: "btn btn-danger",
                 onClick: setModalIsOpenToTrue,
                 children: "Delete"
-              }, data.customerID), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-                type: "button",
-                className: "btn btn-primary",
-                onClick: routeChange,
-                children: "Update"
-              }, data.customerID)]
+              }, data.customerID)
             })]
           }, data.customerID)
         })]
@@ -5878,7 +5887,6 @@ var Modal = function Modal(_ref) {
 
   var handleDelete = function handleDelete(e) {
     e.preventDefault();
-    console.log("fetus deletus");
     fetch(url + path, {
       method: 'DELETE'
     }).then(function () {
@@ -7282,6 +7290,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/NavigationBar */ "./resources/js/components/NavigationBar.js");
 /* harmony import */ var _css_InventoryPage_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/InventoryPage.css */ "./resources/css/InventoryPage.css");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -7302,7 +7311,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var SalesReport = function SalesReport(props) {
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
   var customer_data = props.customer_data,
       inventory_data = props.inventory_data,
       sales_data = props.sales_data;
@@ -7340,16 +7351,18 @@ var SalesReport = function SalesReport(props) {
   });
 
   var handleDelete = function handleDelete(saleID) {
-    console.log("delete"); // fetch(`${process.env.REACT_APP_API_URL}/api/users/${id}`, {
-    //     method: 'DELETE',
-    // }).then(() => {
-    //     alert("Delete successful.");
-    //     window.location.reload();
-    // });
+    console.log("delete");
+    fetch("http://127.0.0.1:8000/api/sales/".concat(saleID), {
+      method: 'DELETE'
+    }).then(function () {
+      alert("Delete successful.");
+      window.location.reload();
+    });
   };
 
-  var handleUpdate = function handleUpdate(saleID, customer_customerID, item_itemID, saleDate, salePrice, saleAmount) {
-    console.log("update");
+  var routeChange = function routeChange(saleID) {
+    var path = "/sales-report/".concat(saleID);
+    navigate(path);
   };
 
   var SalesData = sales_data.map(function (row) {
@@ -7370,10 +7383,10 @@ var SalesReport = function SalesReport(props) {
             type: "button",
             className: "btn btn-success",
             onClick: function onClick() {
-              return handleUpdate(row.saleID, row.customer_customerID, row.item_itemID, row.saleDate, row.salePrice, row.saleAmount);
+              return routeChange(row.saleID);
             },
             children: "Update"
-          }, row.id)
+          }, row.customerID)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
             type: "button",
@@ -7474,6 +7487,319 @@ var SalesReport = function SalesReport(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SalesReport);
+
+/***/ }),
+
+/***/ "./resources/js/pages/SalesUpdate.js":
+/*!*******************************************!*\
+  !*** ./resources/js/pages/SalesUpdate.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/NavigationBar */ "./resources/js/components/NavigationBar.js");
+/* harmony import */ var _css_InventoryPage_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../css/InventoryPage.css */ "./resources/css/InventoryPage.css");
+/* harmony import */ var _useFetch__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../useFetch */ "./resources/js/useFetch.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Update = function Update(props) {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useParams)(),
+      id = _useParams.id;
+
+  var customer_data = props.customer_data,
+      inventory_data = props.inventory_data,
+      sales_data = props.sales_data;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    customer_customerID: "",
+    item_itemID: "",
+    saleDate: "",
+    saleAmount: "",
+    salePrice: ""
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      report_data = _useState2[0],
+      setReportData = _useState2[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    var fetchData = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+        var route;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                route = "http://127.0.0.1:8000/api/sales/".concat(id);
+                _context.next = 4;
+                return axios.get(route).then(function (response) {
+                  return setReportData({
+                    customer_customerID: response.data.customer_customerID,
+                    item_itemID: response.data.item_itemID,
+                    saleDate: response.data.saleDate,
+                    saleAmount: response.data.saleAmount,
+                    salePrice: response.data.salePrice
+                  });
+                });
+
+              case 4:
+                _context.next = 9;
+                break;
+
+              case 6:
+                _context.prev = 6;
+                _context.t0 = _context["catch"](0);
+                console.log(_context.t0);
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 6]]);
+      }));
+
+      return function fetchData() {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    fetchData();
+  }, []);
+  console.log(JSON.stringify(report_data));
+  var GetCustomers = customer_data.map(function (row) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+        value: row.customerID,
+        children: row.customerName
+      })
+    });
+  });
+  var GetItems = inventory_data.map(function (row) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+        value: row.itemID,
+        children: row.itemName
+      })
+    });
+  });
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(report_data.customer_customerID),
+      _useState4 = _slicedToArray(_useState3, 2),
+      customer = _useState4[0],
+      setCustomer = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(report_data.item_itemID),
+      _useState6 = _slicedToArray(_useState5, 2),
+      item = _useState6[0],
+      setItem = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      date = _useState8[0],
+      setDate = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(.99),
+      _useState10 = _slicedToArray(_useState9, 2),
+      price = _useState10[0],
+      setPrice = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
+      _useState12 = _slicedToArray(_useState11, 2),
+      count = _useState12[0],
+      setCount = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+      _useState14 = _slicedToArray(_useState13, 2),
+      validationError = _useState14[0],
+      setValidationError = _useState14[1];
+
+  var updateSales = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(e) {
+      var formData, data;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              e.preventDefault();
+              formData = new FormData();
+              formData.append('customer_customerID', customer);
+              formData.append('item_itemID', item);
+              formData.append('saleDate', date);
+              formData.append('salePrice', price);
+              formData.append('saleCount', count); // Build the data object.
+
+              data = {};
+              formData.forEach(function (value, key) {
+                return data[key] = value;
+              }); // Log the data.
+
+              console.log(data);
+              _context2.next = 12;
+              return axios.patch("http://127.0.0.1:8000/api/sales/".concat(id), data).then(function (_ref3) {
+                var data = _ref3.data;
+                alert("Sales Report Successfully Updated");
+                navigate("/customer");
+              })["catch"](function (_ref4) {
+                var response = _ref4.response;
+
+                if (response.status === 422) {
+                  setValidationError(response.data.errors);
+                } else {
+                  alert("Sales Report Update Failed");
+                }
+              });
+
+            case 12:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function updateSales(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("h1", {
+        children: [" Update Sales Report ID:", id]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+        onSubmit: updateSales,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "customer",
+            className: "form-label",
+            children: "Customer Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+            className: "form-select",
+            name: "customer",
+            required: true,
+            value: report_data.customer_customerID,
+            onChange: function onChange(e) {
+              return setCustomer(e.target.value);
+            },
+            children: GetCustomers
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "item",
+            className: "form-label",
+            children: "Item Name"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+            className: "form-select",
+            name: "item",
+            required: true,
+            value: report_data.item_itemID,
+            onChange: function onChange(e) {
+              return setItem(e.target.value);
+            },
+            children: GetItems
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "date",
+            className: "form-label",
+            children: "Date"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "date",
+            className: "form-control",
+            id: "date",
+            required: true,
+            value: date,
+            onChange: function onChange(e) {
+              return setDate(e.target.value);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "price",
+            className: "form-label",
+            children: "Price"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "number",
+            className: "form-control",
+            id: "price",
+            required: true,
+            value: price,
+            onChange: function onChange(e) {
+              return setPrice(e.target.valueAsNumber);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "count",
+            className: "form-label",
+            children: "Count"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "number",
+            className: "form-control",
+            id: "count",
+            required: true,
+            value: count,
+            onChange: function onChange(e) {
+              return setCount(e.target.valueAsNumber);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: "button-container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+            type: "submit",
+            className: "btn btn-primary",
+            children: "Update"
+          })
+        })]
+      })]
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Update);
 
 /***/ }),
 
@@ -12618,7 +12944,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container {\r\n    font-family: 'Open Sans', sans-serif;\r\n    font-size: 1.1em;\r\n}\r\nform select {\r\n    margin-left: .5rem;\r\n}\r\nh1 {\r\n    font-family: 'Roboto', sans-serif;\r\n    text-align: center;\r\n}\r\ntable {\r\n    margin-top: 2rem;\r\n}\r\ntable th {\r\n    font-family: 'Roboto', sans-serif;\r\n}\r\n\r\n#new-button {\r\n    margin-top: 1rem;\r\n}\r\n\r\n/* Create Page */\r\n\r\ntable {\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\nform select {\r\n    margin-left: 0;\r\n}\r\n#button-container {\r\n    text-align: center;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 1.1em;\n}\nform select {\n    margin-left: .5rem;\n}\nh1 {\n    font-family: 'Roboto', sans-serif;\n    text-align: center;\n}\ntable {\n    margin-top: 2rem;\n}\ntable th {\n    font-family: 'Roboto', sans-serif;\n}\n\n#new-button {\n    margin-top: 1rem;\n}\n\n/* Create Page */\n\ntable {\n    font-family: 'Open Sans', sans-serif;\n}\nform select {\n    margin-left: 0;\n}\n#button-container {\n    text-align: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12643,7 +12969,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    width:100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.5);\r\n    font-family: 'Open Sans', sans-serif;\r\n}\r\n.modal-main {\r\n    position:fixed;\r\n    background: white;\r\n    width: 80%;\r\n    height: 200px;\r\n    top:50%;\r\n    left:50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n.display-block {\r\n    display: block;\r\n}\r\n.display-none {\r\n    display: none;\r\n}\r\n.modal-main p {\r\n    margin-top: 3rem;\r\n    font-weight: bold;\r\n    text-align: center;\r\n    font-size: 1.25em;\r\n}\r\n.button-container {\r\n    margin-top: 1rem;\r\n    text-align: center;\r\n}\r\n#button-yes {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n#button-no {\r\n    margin-right: 1rem;\r\n    padding: .35rem 1.25rem .35rem 1.25rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width:100%;\n    height: 100%;\n    background: rgba(0, 0, 0, 0.5);\n    font-family: 'Open Sans', sans-serif;\n}\n.modal-main {\n    position:fixed;\n    background: white;\n    width: 80%;\n    height: 200px;\n    top:50%;\n    left:50%;\n    transform: translate(-50%,-50%);\n}\n.display-block {\n    display: block;\n}\n.display-none {\n    display: none;\n}\n.modal-main p {\n    margin-top: 3rem;\n    font-weight: bold;\n    text-align: center;\n    font-size: 1.25em;\n}\n.button-container {\n    margin-top: 1rem;\n    text-align: center;\n}\n#button-yes {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n#button-no {\n    margin-right: 1rem;\n    padding: .35rem 1.25rem .35rem 1.25rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12674,7 +13000,7 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Bangers&family=Open+Sans&family=Roboto&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_imgs_toggler_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "nav  {\n    background-color: #235789;\n    height: 80px;\n}\n.navbar-logo {\n    height: 50px;\n    margin-left: 1rem;\n    margin-right: 2rem;\n}\n.navbar-brand {\n    font-family: 'Bangers', cursive;\n    font-size: 2.25em;\n    letter-spacing: 1px;\n    color: #CCE7F7;\n    padding: 0;\n    transition: 0.3s ease;\n}\n.navbar-brand:last-of-type {\n    margin-right: 2rem;\n}\n.navbar-brand:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.nav-link {\n    font-family: 'Open Sans', sans-serif;\n    font-size: 1.1em;\n    color: #CCE7F7;\n    transition: 0.3s ease;\n}\n.nav-link:hover {\n    color: #CCE7F7;\n    opacity: 0.8;\n}\n.navbar-toggler {\n    outline: none;\n    border: 2px solid white;\n    border-radius: 10px;\n}\n.navbar-toggler-icon {\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    height: 25px;\n    width: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "nav  {\r\n    background-color: #235789;\r\n    height: 80px;\r\n}\r\n.navbar-logo {\r\n    height: 50px;\r\n    margin-left: 1rem;\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand {\r\n    font-family: 'Bangers', cursive;\r\n    font-size: 2.25em;\r\n    letter-spacing: 1px;\r\n    color: #CCE7F7;\r\n    padding: 0;\r\n    transition: 0.3s ease;\r\n}\r\n.navbar-brand:last-of-type {\r\n    margin-right: 2rem;\r\n}\r\n.navbar-brand:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.nav-link {\r\n    font-family: 'Open Sans', sans-serif;\r\n    font-size: 1.1em;\r\n    color: #CCE7F7;\r\n    transition: 0.3s ease;\r\n}\r\n.nav-link:hover {\r\n    color: #CCE7F7;\r\n    opacity: 0.8;\r\n}\r\n.navbar-toggler {\r\n    outline: none;\r\n    border: 2px solid white;\r\n    border-radius: 10px;\r\n}\r\n.navbar-toggler-icon {\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n    height: 25px;\r\n    width: 25px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

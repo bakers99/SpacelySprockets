@@ -70,7 +70,7 @@ class SalesController extends Controller
      */
     public function show($id)
     {
-        //
+        return Sale::find($id);
     }
 
     /**
@@ -93,7 +93,34 @@ class SalesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'customer_customerID'=>'required',
+            'item_itemID'=>'required',
+            'saleDate'=>'required',
+            'saleTime'=>'required',
+            'saleAmount'=>'required',
+            'salePrice'=>'required'
+        ]);
+
+        try{
+            $sale = Sale::find($id);
+            $sale->customer_customerID = $request->customer_customerID;
+            $sale->item_itemID = $request->item_itemID;
+            $sale->saleDate = $request->saleDate;
+            $sale->saleTime = $request->saleTime;
+            $sale->saleAmount = $request->saleAmount;
+            $sale->salePrice = $request->salePrice;
+            $sale->save();
+
+            return response()->json([
+                'message'=>'Customer Created Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while updating sales info!!'
+            ],500);
+        }
     }
 
     /**
@@ -104,6 +131,9 @@ class SalesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $item = Sale::find($id);
+        $item->delete();
+
     }
 }
