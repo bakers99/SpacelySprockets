@@ -60,7 +60,7 @@ const SalesPage = (props) => {
 
             <div className="container">
 
-                <h1> Create Inventory Item</h1>
+                <h1> Create Sale</h1>
 
                 <form onSubmit={createTransaction}>
                     <div className="mb-3">
@@ -87,7 +87,7 @@ const SalesPage = (props) => {
                     </div>
                     <div className="mb-3">
                         <label htmlFor="saleAmount" className="form-label">Amount Purchased:</label>
-                        <input type="number" className="form-control" id="saleDate" required value={saleAmount} onChange= {(e) => setSaleAmount(e.target.valueAsNumber)}/>
+                        <input type="number" className="form-control" id="saleDate" min="1" required value={saleAmount} onChange= {(e) => setSaleAmount(e.target.valueAsNumber)}/>
                     </div>
                     
                     <div className="button-container">

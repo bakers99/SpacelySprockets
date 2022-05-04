@@ -8,7 +8,7 @@ const SalesReport = (props) => {
     const navigate = useNavigate();
     const {customer_data, inventory_data, sales_data} = props;
 
-    const[customerName, setCustomerName] = useState("1");
+    const[customerName, setCustomerName] = useState("");
     const[itemName, setItemName] = useState("");
     const[minimumPrice, setMinimumPrice] = useState(0.00);
 
@@ -78,18 +78,20 @@ const SalesReport = (props) => {
                     <div className="mb-3">
                         <label htmlFor="customerName" className="form-label">Customer</label>
                         <select className="form-select" name="customerName" required value={customerName} onChange= {(e) => setCustomerName(e.target.value)}>
+                            <option value="" disabled selected hidden>Select Customer</option>
                             {GetCustomers}
                         </select>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="itemName" className="form-label">Item</label>
                         <select className="form-select" name="itemName" required value={itemName} onChange= {(e) => setItemName(e.target.value)}>
+                            <option value="" disabled selected hidden>Select Item</option>
                             {GetItems}
                         </select>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="minimumPrice" className="form-label">Minimum Price</label>
-                        <input type="number" className="form-control" id="minimumPrice" required value={minimumPrice} onChange= {(e) => setMinimumPrice(e.target.valueAsNumber)}/>
+                        <input type="number" className="form-control" id="minimumPrice" min="0" required value={minimumPrice} onChange= {(e) => setMinimumPrice(e.target.valueAsNumber)}/>
                     </div>
                 </form>
 

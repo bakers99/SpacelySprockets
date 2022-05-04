@@ -36,7 +36,7 @@ const Create = () => {
 
             <div className="container">
 
-                <h1> Create Inventory Item</h1>
+                <h1> Create Customer</h1>
 
                 <form onSubmit={createCustomer}>
 

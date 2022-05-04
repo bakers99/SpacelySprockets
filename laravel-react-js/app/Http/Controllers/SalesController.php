@@ -43,7 +43,6 @@ class SalesController extends Controller
         $item = Item::find($request->item_itemID);
         $total = ($item->itemCost*$request->saleAmount);
 
-        error_log($total);
 
         try{
             $sales = new Sale;
@@ -104,8 +103,10 @@ class SalesController extends Controller
             'saleDate'=>'required',
             'saleTime'=>'required',
             'saleAmount'=>'required',
-            'salePrice'=>'required'
         ]);
+
+        $item = Item::find($request->item_itemID);
+        $total = ($item->itemCost*$request->saleAmount);
 
         try{
             $sale = Sale::find($id);
@@ -114,7 +115,7 @@ class SalesController extends Controller
             $sale->saleDate = $request->saleDate;
             $sale->saleTime = $request->saleTime;
             $sale->saleAmount = $request->saleAmount;
-            $sale->salePrice = $request->salePrice;
+            $sale->salePrice = $total;
             $sale->save();
 
             return response()->json([

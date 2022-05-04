@@ -6140,7 +6140,7 @@ var Create = function Create() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-        children: " Create Inventory Item"
+        children: " Create Customer"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
         onSubmit: createCustomer,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -7139,7 +7139,7 @@ var SalesPage = function SalesPage(props) {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_NavigationBar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "container",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-        children: " Create Inventory Item"
+        children: " Create Sale"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
         onSubmit: createTransaction,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -7228,6 +7228,7 @@ var SalesPage = function SalesPage(props) {
             type: "number",
             className: "form-control",
             id: "saleDate",
+            min: "1",
             required: true,
             value: saleAmount,
             onChange: function onChange(e) {
@@ -7293,7 +7294,7 @@ var SalesReport = function SalesReport(props) {
       inventory_data = props.inventory_data,
       sales_data = props.sales_data;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("1"),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),
       customerName = _useState2[0],
       setCustomerName = _useState2[1];
@@ -7389,7 +7390,7 @@ var SalesReport = function SalesReport(props) {
             htmlFor: "customerName",
             className: "form-label",
             children: "Customer"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
             className: "form-select",
             name: "customerName",
             required: true,
@@ -7397,7 +7398,13 @@ var SalesReport = function SalesReport(props) {
             onChange: function onChange(e) {
               return setCustomerName(e.target.value);
             },
-            children: GetCustomers
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Customer"
+            }), GetCustomers]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "mb-3",
@@ -7405,7 +7412,7 @@ var SalesReport = function SalesReport(props) {
             htmlFor: "itemName",
             className: "form-label",
             children: "Item"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("select", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("select", {
             className: "form-select",
             name: "itemName",
             required: true,
@@ -7413,7 +7420,13 @@ var SalesReport = function SalesReport(props) {
             onChange: function onChange(e) {
               return setItemName(e.target.value);
             },
-            children: GetItems
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Item"
+            }), GetItems]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "mb-3",
@@ -7425,6 +7438,7 @@ var SalesReport = function SalesReport(props) {
             type: "number",
             className: "form-control",
             id: "minimumPrice",
+            min: "0",
             required: true,
             value: minimumPrice,
             onChange: function onChange(e) {
@@ -7524,8 +7538,8 @@ var Update = function Update(props) {
     customer_customerID: "",
     item_itemID: "",
     saleDate: "",
-    saleAmount: "",
-    salePrice: ""
+    saleTime: "",
+    saleAmount: ""
   }),
       _useState2 = _slicedToArray(_useState, 2),
       report_data = _useState2[0],
@@ -7547,8 +7561,8 @@ var Update = function Update(props) {
                     customer_customerID: response.data.customer_customerID,
                     item_itemID: response.data.item_itemID,
                     saleDate: response.data.saleDate,
-                    saleAmount: response.data.saleAmount,
-                    salePrice: response.data.salePrice
+                    saleTime: response.data.saleTime,
+                    saleAmount: response.data.saleAmount
                   });
                 });
 
@@ -7576,7 +7590,6 @@ var Update = function Update(props) {
 
     fetchData();
   }, []);
-  console.log(JSON.stringify(report_data));
   var GetCustomers = customer_data.map(function (row) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
@@ -7634,11 +7647,11 @@ var Update = function Update(props) {
             case 0:
               e.preventDefault();
               formData = new FormData();
-              formData.append('customer_customerID', customer);
-              formData.append('item_itemID', item);
-              formData.append('saleDate', date);
-              formData.append('salePrice', price);
-              formData.append('saleCount', count); // Build the data object.
+              formData.append('customer_customerID', report_data.customer_customerID);
+              formData.append('item_itemID', report_data.item_itemID);
+              formData.append('saleDate', report_data.saleDate);
+              formData.append('saleTime', report_data.saleTime);
+              formData.append('saleAmount', report_data.saleAmount); // Build the data object.
 
               data = {};
               formData.forEach(function (value, key) {
@@ -7650,7 +7663,7 @@ var Update = function Update(props) {
               return axios.patch("http://127.0.0.1:8000/api/sales/".concat(id), data).then(function (_ref3) {
                 var data = _ref3.data;
                 alert("Sales Report Successfully Updated");
-                navigate("/customer");
+                navigate("/");
               })["catch"](function (_ref4) {
                 var response = _ref4.response;
 
@@ -7686,79 +7699,122 @@ var Update = function Update(props) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
             htmlFor: "customer",
             className: "form-label",
-            children: "Customer Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+            children: "Customer"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
             className: "form-select",
-            name: "customer",
+            name: "category",
             required: true,
             value: report_data.customer_customerID,
             onChange: function onChange(e) {
-              return setCustomer(e.target.value);
+              return setReportData({
+                customer_customerID: e.target.value,
+                item_itemID: report_data.item_itemID,
+                saleDate: report_data.saleDate,
+                saleTime: report_data.saleTime,
+                saleAmount: report_data.saleAmount
+              });
             },
-            children: GetCustomers
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Customer"
+            }), GetCustomers]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "saleDate",
+            className: "form-label",
+            children: "Sale Date:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "date",
+            className: "form-control",
+            id: "saleDate",
+            required: true,
+            value: report_data.saleDate,
+            onChange: function onChange(e) {
+              return setReportData({
+                customer_customerID: report_data.customer_customerID,
+                item_itemID: report_data.item_itemID,
+                saleDate: e.target.value,
+                saleTime: report_data.saleTime,
+                saleAmount: report_data.saleAmount
+              });
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            htmlFor: "saleTime",
+            className: "form-label",
+            children: "Sale Time:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "time",
+            className: "form-control",
+            id: "saleDate",
+            required: true,
+            value: report_data.saleTime,
+            onChange: function onChange(e) {
+              return setReportData({
+                customer_customerID: report_data.customer_customerID,
+                item_itemID: report_data.item_itemID,
+                saleDate: report_data.saleDate,
+                saleTime: e.target.value,
+                saleAmount: report_data.saleAmount
+              });
+            }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "mb-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
             htmlFor: "item",
             className: "form-label",
-            children: "Item Name"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("select", {
+            children: "Item Purchased"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
             className: "form-select",
-            name: "item",
+            name: "itemID",
             required: true,
             value: report_data.item_itemID,
             onChange: function onChange(e) {
-              return setItem(e.target.value);
+              return setReportData({
+                customer_customerID: report_data.customer_customerID,
+                item_itemID: e.target.value,
+                saleDate: report_data.saleDate,
+                saleTime: report_data.saleTime,
+                saleAmount: report_data.saleAmount
+              });
             },
-            children: GetItems
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
+              value: "",
+              disabled: true,
+              selected: true,
+              hidden: true,
+              children: "Select Item"
+            }), GetItems]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "mb-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-            htmlFor: "date",
+            htmlFor: "saleAmount",
             className: "form-label",
-            children: "Date"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-            type: "date",
-            className: "form-control",
-            id: "date",
-            required: true,
-            value: date,
-            onChange: function onChange(e) {
-              return setDate(e.target.value);
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "mb-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-            htmlFor: "price",
-            className: "form-label",
-            children: "Price"
+            children: "Amount Purchased:"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
             type: "number",
             className: "form-control",
-            id: "price",
+            id: "saleDate",
+            min: "1",
             required: true,
-            value: price,
+            value: report_data.saleAmount,
             onChange: function onChange(e) {
-              return setPrice(e.target.valueAsNumber);
-            }
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          className: "mb-3",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-            htmlFor: "count",
-            className: "form-label",
-            children: "Count"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-            type: "number",
-            className: "form-control",
-            id: "count",
-            required: true,
-            value: count,
-            onChange: function onChange(e) {
-              return setCount(e.target.valueAsNumber);
+              return setReportData({
+                customer_customerID: report_data.customer_customerID,
+                item_itemID: report_data.item_itemID,
+                saleDate: report_data.saleDate,
+                saleTime: report_data.saleTime,
+                saleAmount: e.target.value
+              });
             }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
