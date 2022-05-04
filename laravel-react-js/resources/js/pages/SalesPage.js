@@ -7,24 +7,25 @@ import '../../css/InventoryPage.css';
 const SalesPage = (props) => {
     const {customer_data, inventory_data} = props;
 
-
     const navigate = useNavigate();
-    const[customerName, setCustomerName] = useState("Customer Name...");
+    const[customerName, setCustomerName] = useState("");
     const[saleDate, setSaleDate] = useState("");
     const[saleTime, setSaleTime] = useState("");
     const[item, setItem] = useState("");
     const[saleAmount, setSaleAmount] = useState(1);
     const[salePrice, setSalePrice] = useState(.99);
 
+    console.log(item)
+    console.log(customerName)
 
     const [validationError,setValidationError] = useState({})
 
     const createTransaction = async (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const formData = new FormData()
-        formData.append('customerID', customerName)
-        formData.append('itemID', item)
+        formData.append('customer_customerID', customerName)
+        formData.append('item_itemID', item)
         formData.append('salesDate', saleDate)
         formData.append('saleTime', saleTime)
         formData.append('saleAmount', saleAmount)

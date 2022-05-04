@@ -23,3 +23,5 @@ Route::get('{reactRoutes}', function () {
 Route::resource('api/sales', SalesController::class);
 Route::resource('api/customers', CustomerController::class);
 Route::resource('api/inventory', InventoryController::class);
+
+//Route::post('api/sales', [SalesController::class, 'create']);

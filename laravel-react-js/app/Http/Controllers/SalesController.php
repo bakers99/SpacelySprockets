@@ -14,17 +14,13 @@ class SalesController extends Controller
      */
     public function index()
     {
-        //
+        return Sale::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Request $req)
     {
-        //
+        return $req->input();
     }
 
     /**
@@ -36,8 +32,8 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'customerID'=>'required',
-            'itemID'=>'required',
+            'customer_customerID'=>'required',
+            'item_itemID'=>'required',
             'saleDate'=>'required',
             'saleTime'=>'required',
             'saleAmount'=>'required',
@@ -45,14 +41,14 @@ class SalesController extends Controller
         ]);
 
         try{
-            $sale = new Sale;
-            $sale->customerID = $request->customerID;
-            $sale->itemID = $request->itemID;
-            $sale->saleDate = $request->saleDate;
-            $sale->saleTime = $request->saleTime;
-            $sale->saleAmount = $request->saleAmount;
-            $sale->salePrice = $request->salePrice;
-            $sale->save();
+            $sales = new Sale;
+            $sales->customer_customerID = $request->customer_customerID;
+            $sales->item_itemID = $request->item_itemID;
+            $sales->saleDate = $request->saleDate;
+            $sales->saleTime = $request->saleTime;
+            $sales->saleAmount = $request->saleAmount;
+            $sales->salePrice = $request->salePrice;
+            $sales->save();
 
             return response()->json([
                 'message'=>'Sale transaction completed Successfully!!'

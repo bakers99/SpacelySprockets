@@ -24,15 +24,19 @@ const AppRouter = () => {
 
     const [inventory_data, setInventoryData] = useState([]);
     const [customer_data, setCustomerData] = useState([]);
+    const [sales_data, setSalesData] = useState([]);
+
 
     const getData = () => {
         let routes = [
             `http://127.0.0.1:8000/api/inventory/`,
             `http://127.0.0.1:8000/api/customers/`,
+            `http://127.0.0.1:8000/api/sales/`,
         ];
-        Promise.all(routes.map((route) => axios.get(route))).then(([{data: inventory_data}, {data: customer_data}]) => {
+        Promise.all(routes.map((route) => axios.get(route))).then(([{data: inventory_data}, {data: customer_data}, {data: sales_data}]) => {
             setInventoryData(inventory_data)
             setCustomerData(customer_data)
+            setSalesData(sales_data)
         });
     }
 
@@ -54,7 +58,7 @@ const AppRouter = () => {
                     <Route path="/createCustomer" element={<CustomerCreate />} />
                     <Route path="/updateCustomer/:id" element={<CustomerUpdate />} />
                     <Route path="/sales" element={<SalesPage customer_data={customer_data} inventory_data={inventory_data} />} />
-                    <Route path="/sales-report" element={<SalesReport />} />
+                    <Route path="/sales-report" element={<SalesReport customer_data={customer_data} inventory_data={inventory_data} sales_data={sales_data} />} />
 
 
                     {/*<Route path="/create" element={<CreatePage />} />*/}
