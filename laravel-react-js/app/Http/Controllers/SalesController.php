@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sale;
 
 class SalesController extends Controller
 {
@@ -34,8 +35,36 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'customerID'=>'required',
+            'itemID'=>'required',
+            'saleDate'=>'required',
+            'saleTime'=>'required',
+            'saleAmount'=>'required',
+            'salePrice'=>'required'
+        ]);
+
+        try{
+            $sale = new Sale;
+            $sale->customerID = $request->customerID;
+            $sale->itemID = $request->itemID;
+            $sale->saleDate = $request->saleDate;
+            $sale->saleTime = $request->saleTime;
+            $sale->saleAmount = $request->saleAmount;
+            $sale->salePrice = $request->salePrice;
+            $sale->save();
+
+            return response()->json([
+                'message'=>'Sale transaction completed Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            \Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something went wrong while creating a sale!!'
+            ],500);
+        }
     }
+
 
     /**
      * Display the specified resource.

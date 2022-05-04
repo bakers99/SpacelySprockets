@@ -6804,54 +6804,70 @@ var SalesPage = function SalesPage(props) {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)("Customer Name..."),
       _useState2 = _slicedToArray(_useState, 2),
-      customer = _useState2[0],
-      setCustomer = _useState2[1];
+      customerName = _useState2[0],
+      setCustomerName = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
       saleDate = _useState4[0],
       setSaleDate = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState6 = _slicedToArray(_useState5, 2),
       saleTime = _useState6[0],
       setSaleTime = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
       _useState8 = _slicedToArray(_useState7, 2),
-      itemID = _useState8[0],
-      setItemID = _useState8[1];
+      item = _useState8[0],
+      setItem = _useState8[1];
 
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(1),
       _useState10 = _slicedToArray(_useState9, 2),
-      validationError = _useState10[0],
-      setValidationError = _useState10[1];
+      saleAmount = _useState10[0],
+      setSaleAmount = _useState10[1];
 
-  var createItem = /*#__PURE__*/function () {
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(.99),
+      _useState12 = _slicedToArray(_useState11, 2),
+      salePrice = _useState12[0],
+      setSalePrice = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+      _useState14 = _slicedToArray(_useState13, 2),
+      validationError = _useState14[0],
+      setValidationError = _useState14[1];
+
+  var createTransaction = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(e) {
+      var formData;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              e.preventDefault(); // const formData = new FormData()
-              // formData.append('itemName', item)
-              // formData.append('itemDesc', description)
-              // formData.append('itemID', id)
-              // formData.append('itemCategory', category)
-              // formData.append('itemCount', count)
-              // formData.append('itemCost', cost)
-              //
-              // await axios.post(`http://127.0.0.1:8000/api/inventory`, formData).then(({data})=>{
-              //     alert("Item successfully Created")
-              //     navigate("/inventory")
-              // }).catch(({response})=>{
-              //     if(response.status===422){
-              //         setValidationError(response.data.errors)
-              //     }else{
-              //         alert("Item Creation Failed")
-              //     }})
+              e.preventDefault();
+              formData = new FormData();
+              formData.append('customerID', customerName);
+              formData.append('itemID', item);
+              formData.append('salesDate', saleDate);
+              formData.append('saleTime', saleTime);
+              formData.append('saleAmount', saleAmount);
+              formData.append('salePrice', salePrice);
+              _context.next = 10;
+              return axios.post("http://127.0.0.1:8000/api/sales", formData).then(function (_ref2) {
+                var data = _ref2.data;
+                alert("Item successfully Created");
+                navigate("/sales");
+              })["catch"](function (_ref3) {
+                var response = _ref3.response;
 
-            case 1:
+                if (response.status === 422) {
+                  setValidationError(response.data.errors);
+                } else {
+                  alert("Transaction Failed");
+                }
+              });
+
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -6859,7 +6875,7 @@ var SalesPage = function SalesPage(props) {
       }, _callee);
     }));
 
-    return function createItem(_x) {
+    return function createTransaction(_x) {
       return _ref.apply(this, arguments);
     };
   }();
@@ -6867,7 +6883,7 @@ var SalesPage = function SalesPage(props) {
   var GetCustomers = customer_data.map(function (row) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-        value: "Sprocket",
+        value: row.customerID,
         children: row.customerName
       })
     });
@@ -6875,7 +6891,7 @@ var SalesPage = function SalesPage(props) {
   var GetItems = inventory_data.map(function (row) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-        value: "Sprocket",
+        value: row.itemID,
         children: row.itemName
       })
     });
@@ -6886,7 +6902,7 @@ var SalesPage = function SalesPage(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
         children: " Create Inventory Item"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-        onSubmit: createItem,
+        onSubmit: createTransaction,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "mb-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
@@ -6897,9 +6913,9 @@ var SalesPage = function SalesPage(props) {
             className: "form-select",
             name: "category",
             required: true,
-            value: customer,
+            value: customerName,
             onChange: function onChange(e) {
-              return setCustomer(e.target.value);
+              return setCustomerName(e.target.value);
             },
             children: GetCustomers
           })]
@@ -6938,18 +6954,50 @@ var SalesPage = function SalesPage(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "mb-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-            htmlFor: "itemID",
+            htmlFor: "item",
             className: "form-label",
             children: "Item Purchased"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("select", {
             className: "form-select",
             name: "itemID",
             required: true,
-            value: itemID,
+            value: item,
             onChange: function onChange(e) {
-              return setItemID(e.target.value);
+              return setItem(e.target.value);
             },
             children: GetItems
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "saleAmount",
+            className: "form-label",
+            children: "Amount Purchased:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            className: "form-control",
+            id: "saleDate",
+            required: true,
+            value: saleAmount,
+            onChange: function onChange(e) {
+              return setSaleAmount(e.target.valueAsNumber);
+            }
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "mb-3",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
+            htmlFor: "salePrice",
+            className: "form-label",
+            children: "Item Price:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "number",
+            className: "form-control",
+            id: "salePrice",
+            required: true,
+            value: salePrice,
+            onChange: function onChange(e) {
+              return setSalePrice(e.target.valueAsNumber);
+            }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "button-container",
