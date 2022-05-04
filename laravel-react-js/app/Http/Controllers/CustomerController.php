@@ -90,7 +90,7 @@ class CustomerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'customerName'=>'required',
@@ -99,7 +99,7 @@ class CustomerController extends Controller
         ]);
 
         try{
-            $customer = Customer::find($request->customerID);
+            $customer = Customer::find($id);
             $customer->customerName = $request->customerName;
             $customer->customerAddress = $request->customerAddress;
             $customer->companyName = $request->companyName;
