@@ -28,7 +28,7 @@ const CustomerPage = () => {
                         <th scope="col">Name</th>
                         <th scope="col">Address</th>
                         <th scope="col">Company Name</th>
-                        
+
                     </tr>
                     </thead>
                     <tbody>

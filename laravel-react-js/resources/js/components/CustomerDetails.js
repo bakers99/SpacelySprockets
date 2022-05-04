@@ -6,7 +6,7 @@ import Modal from './Modal'
 import { useNavigate } from "react-router-dom";
 
 
-const ItemDetails = () => {
+const CustomerDetails = () => {
     const {id} = useParams();
     const url = 'http://127.0.0.1:8000/api/customers/'
     const navRoute ='/customer';
@@ -70,4 +70,4 @@ const ItemDetails = () => {
     )
 }
 
-export default ItemDetails;
+export default CustomerDetails;
